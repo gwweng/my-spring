@@ -13,7 +13,13 @@ import cn.my.spring.beans.factory.config.BeanDefinition;
 public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory {
     @Override
     public Object getBean(String beanName) throws BeansException {
-        return null;
+        Object bean = getSingleton(beanName);
+        if (bean != null) {
+            return bean;
+        }
+
+        BeanDefinition beanDefinition = getBeanDefinition(beanName);
+        return createBean(beanName, beanDefinition);
     }
 
     protected abstract BeanDefinition getBeanDefinition(String beanName) throws BeansException;
