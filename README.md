@@ -19,4 +19,5 @@
 ### 分支说明
 branch-list
 - spring-step01: 初步实现创建Spring容器
+- spring-step02: 使用设计模式完善Spring容器的Bean定义和注册
 
