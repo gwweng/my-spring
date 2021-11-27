@@ -1,5 +1,7 @@
 package cn.my.spring.beans.factory;
 
+import cn.my.spring.context.support.BeansException;
+
 /**
  * @author gengweiweng
  * @time 2021/11/25
@@ -11,5 +13,5 @@ public interface BeanFactory {
      * @param beanName bean名称
      * @return Spring Bean
      */
-    Object getBean(String beanName);
+    Object getBean(String beanName) throws BeansException;
 }
