@@ -22,8 +22,15 @@ public class ContextTest {
         BeanDefinition beanDefinition = new BeanDefinition(new TestService());
         ((DefaultLisableBeanFactory) beanFactory).registerBeanDefinition("testService", beanDefinition);
 
-        // 3.获取bean
+        // 3.第一次获取bean
         TestService testService = (TestService) beanFactory.getBean("testService");
         testService.sayHello();
+
+        // 3.第二次获取bean
+        TestService testService1 = (TestService) beanFactory.getBean("testService");
+        testService.sayHello();
+
+        System.out.println(testService == testService1);
+
     }
 }
